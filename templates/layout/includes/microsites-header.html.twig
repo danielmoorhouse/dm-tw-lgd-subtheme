@@ -1,0 +1,130 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+
+{% set header_attributes = create_attribute() %}
+
+{%
+  set header_classes = [
+    'region',
+    'region-microsites-header',
+    'bg-indigo-900',
+    microsites.header.width.content_centered ? 'container' : '',
+  ]
+%}
+
+{# Begin pre-header #}
+{% if has_search and microsites.pre_header.items.lgms_display_sitewide_search.0['#markup'] == 'On' %}
+
+  {% if microsites.pre_header.width.content_centered %}
+    <div class="container mx-auto px-4">
+  {% endif %}
+  <div class="microsite-header__pre-header">
+
+    {% if microsites.pre_header.width.full_width_content_contained %}
+      <div class="container mx-auto px-4">
+    {% endif %}
+    {% if has_search and microsites.pre_header.items.lgms_display_sitewide_search.0['#markup'] == 'On' %}
+      <div class="microsite-header__search">
+        {{ page.search }}
+      </div>
+    {% endif %}
+    {% if microsites.pre_header.width.full_width_content_contained %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if microsites.pre_header.width.content_centered %}
+    </div>
+  {% endif %}
+{% endif %}
+{# End pre-header #}
+
+{# Begin Header #}
+<div{{ header_attributes.addClass(header_classes) }}>
+
+  {% if microsites.header.width.full_width_content_contained %}
+    <div class="container mx-auto px-4">  {# Tailwind container with horizontal padding #}
+  {% endif %}
+
+  <div class="region__inner region__inner--{{ region }}">
+
+    {# Begin Microsite Header Main #}
+    <div class="microsite-header__main container mx-auto flex items-center justify-between py-4">  {# Flexbox for header layout, vertical padding #}
+      
+      {# Logo Section #}
+      {% if microsites.header.items.lgms_main_logo %}
+        <div class="microsite-header__logo">
+          <a href="/" class="block">
+            {{ microsites.header.items.lgms_main_logo }}
+          </a>
+        </div>
+      {% endif %}
+
+      {# Site Name & Slogan #}
+      {% if microsites.header.items.lgms_site_name or microsites.header.items.lgms_site_slogan %}
+        <div class="microsite-header__name-slogan ml-4">  {# Margin left for spacing #}
+          {% if microsites.header.items.lgms_site_name.0['#markup'] == 'On' %}
+            <div class="microsite-header__name text-2xl font-bold text-indigo-100">
+              {{ site_name }}
+            </div>
+          {% endif %}
+          {% if microsites.header.items.lgms_site_slogan.0['#markup'] == 'On' %}
+            <div class="microsite-header__slogan text-base text-gray-500">
+              {{ site_slogan }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {# Menus Section #}
+      {% if has_main_menu or has_utility_menu %}
+        <div class="microsite-header__menus flex space-x-4 items-center ml-auto">  {# Flexbox for horizontal menus, spaced evenly #}
+
+          {% if has_utility_menu %}
+            <div class="microsite-header__menu microsite-header__menu--utility text-sm">
+              {{ page.utility_menu }}
+            </div>
+          {% endif %}
+
+          {% if has_main_menu %}
+            <div class="microsite-header__menu microsite-header__menu--main text-lg font-semibold text-gray-900">
+               {{ page.main_menu }} 
+               
+            </div>
+          {% endif %}
+
+        </div>
+      {% endif %}
+
+      {# Off-Canvas Menu Toggle Button for Mobile #}
+      <div class="microsite-header__off-canvas lg:hidden">
+        <button class="microsite-header__off-canvas-toggle bg-gray-800 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+                aria-controls="off-canvas" aria-expanded="false" aria-label="{{ 'off-canvas menu toggle'|t }}">
+          {{ 'Menu'|t }}
+        </button>
+      </div>
+
+    </div>
+    {# End Microsite Header Main #}
+
+  </div>
+
+  {% if microsites.header.width.full_width_content_contained %}
+    </div>
+  {% endif %}
+  
+</div>
+
+{# End Header #}

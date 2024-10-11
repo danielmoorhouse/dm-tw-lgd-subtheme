@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Theme override for node--tailwind-landing-page.html.twig node type.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get" and "has" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ *
+ */
+#}
+    {% set classes = [
+            'node', 
+            'min-w-full',
+            'max-w-full',
+            'node--type--' ~ node.bundle|clean_class,
+            'node--view-mode--' ~ view_mode|clean_class
+    ]
+    %} 
+
+    {% set banner_choice = node.field_choose_a_page_banner.value %}
+
+
+{% if banner_choice == 'meraki_ui_centre_content_with_trusted_by' %}
+
+{% include "@dm_tw_sub/meraki-ui-components/hero-banners/meraki-ui-centre-content-with-trusted-by.html.twig" with {
+        'banner_heading': node.field_banner_heading.value|striptags,
+        'banner_text': node.field_banner_text.value|striptags,
+        'heading_colour': node.field_heading_colour.value,
+        'background_colour': node.field_background_colour.value,
+        'text_colour': node.field_text_colour.value,
+        'trusted_by': node.field_trusted_by
+             
+} %}
+{% endif %}
+{% if banner_choice == 'meraki_ui_coming_soon_with_notify_me' %}
+{% include "@dm_tw_sub/meraki-ui-components/hero-banners/meraki-ui-coming-soon-with-notify-me.html.twig" with {
+        'banner_heading': content.field_banner_heading,
+        'banner_text': content.field_banner_text,
+        'background_colour': node.field_background_colour.value,
+        'text_colour': node.field_text_colour.value
+}  
+%}
+{% endif %}
+{% if banner_choice == 'meraki_ui_side_image' %}
+{% include "@dm_tw_sub/meraki-ui-components/hero-banners/meraki-ui-side-image.html.twig" with {
+        'banner_heading': content.field_banner_heading,
+        'banner_text': content.field_banner_text,
+        'banner_links': content.field_banner_cta,
+        'banner_image': content.field_banner_image.url,
+        'banner_image_overlay': content.field_banner_image_overlay.value,
+        'banner_image_overlay_opacity': content.field_banner_image_overlay_opacity.value,
+        'background_colour': node.field_background_colour.value,
+        'text_colour': node.field_text_colour.value
+}  %}
+{% endif %}
+
+
+</section>

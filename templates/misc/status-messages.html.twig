@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Theme override for status messages.
+ *
+ * Displays status, error, and warning messages, grouped by type.
+ *
+ * An invisible heading identifies the messages for assistive technology.
+ * Sighted users see a coloured box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
+ * for info.
+ *
+ * Add an ARIA label to the contentinfo area so that assistive technology
+ * user agents will better describe this landmark.
+ *
+ * Available variables:
+ * - message_list: List of messages to be displayed, grouped by type.
+ * - status_headings: List of all status types.
+ * - attributes: HTML attributes for the element, including:
+ *   - class: HTML classes.
+ */
+#}
+<div data-drupal-messages>
+  {% block messages %}
+    {% for type, messages in message_list %}
+      {%
+        set classes = [
+          'messages',
+          'messages--' ~ type,
+          'p-4', 'rounded-md', 
+          type == 'error' ? 'bg-red-100 text-red-800 border-red-500' : '',
+          type == 'status' ? 'bg-green-200 text-green-800 border-green-800 ' : '',
+          type == 'warning' ? 'bg-yellow-100 text-yellow-800 border-yellow-500' : '',
+          type == 'info' ? 'bg-blue-100 text-blue-800 border-blue-500' : '',
+          'border-l-4', 'shadow', 'font-medium'
+        ]
+      %}
+      <div role="contentinfo" aria-label="{{ status_headings[type] }}" {{ attributes.addClass(classes)|without('role', 'aria-label') }} data-dismissible="true">
+        {% if type == 'error' %}
+          <div role="alert">
+        {% endif %}
+
+        {# Status headings hidden for accessibility, still present in markup #}
+        {% if status_headings[type] %}
+          <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+        {% endif %}
+
+        {# List multiple messages if there is more than one #}
+        {% if messages|length > 1 %}
+          <ul class="messages__list">
+            {% for message in messages %}
+              <li class="messages__item">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {{ messages|first }}
+        {% endif %}
+
+        {# Close error div #}
+        {% if type == 'error' %}
+          </div>
+        {% endif %}
+
+      </div>
+
+      {# Remove type-specific classes after use #}
+      {% set attributes = attributes.removeClass(classes) %}
+    {% endfor %}
+  {% endblock messages %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dismissibleMessages = document.querySelectorAll('[data-dismissible="true"]');
+
+    dismissibleMessages.forEach(message => {
+      message.addEventListener('click', function () {
+        message.style.display = 'none'; // Hide the message when clicked
+      });
+    });
+  });
+</script>

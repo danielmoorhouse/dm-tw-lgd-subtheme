@@ -1,0 +1,10 @@
+h1 {
+    font-size: 2.6rem!important;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+
+}
+p, div, ul {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}

@@ -1,0 +1,38 @@
+name: "DM TW Sub"
+description: "Your sub-theme, which uses localgov_microsites_base as its base theme."
+type: theme
+core_version_requirement: ^9 || ^10
+base theme: "localgov_microsites_base"
+
+libraries:
+  - dm_tw_sub/global-styling
+  - dm_tw_sub/alpine-js
+
+  
+    # Add libraries that you want to load on every page of your site to the list
+  # of those extending localgov_microsites_base/global
+  # localgov_microsites_base/variables:
+  #   - dm_tw_sub/global-styling
+    # - dm_tw_sub/other-library-to-load-on-every-page
+  # Add libraries here that extend specific libraries.
+  # localgov_microsites_base/sample-library:
+    # - dm_tw_sub/sample-library
+
+regions:
+  tabs: "Tabs"
+  off_canvas: "Off-canvas"
+  header: "Header"
+  search: "Search"
+  main_menu: "Main menu"
+  utility_menu: "Utility menu"
+  page_title: "Page title"
+  breadcrumb: "Breadcrumb"
+  messages: "Messages"
+  content_top: "Content top"
+  content: "Content"
+  content_bottom: "Content bottom"
+  sidebar_first: "Sidebar first"
+  sidebar_second: "Sidebar second"
+  footer_menu: "Footer menu"
+  footer: "Footer"
+  disabled: "Disabled"

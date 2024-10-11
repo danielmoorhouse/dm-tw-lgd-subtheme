@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override for a local task link.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper element.
+ * - is_active: Whether the task item is an active tab.
+ * - link: A rendered link element.
+ *
+ * Note: This template renders the content for each task item in
+ * menu-local-tasks.html.twig.
+ *
+ * @see template_preprocess_menu_local_task()
+ */
+#}
+
+{% set link_route = link['#url'].routeName %}
+{% set link_route_parameters = link['#url'].routeParameters %}
+{% set link_options = link['#options'] %}
+{% set link_text = link['#title'] %}
+{% if link_text is same as('View') %}
+{% set link_style = 'bg-green-200 text-green-800 hover:bg-green-800 hover:text-green-200' %}
+{% set link_icon = 'far fa-eye' %}
+{% endif %}
+{% if link_text is same as('Edit') %}
+{% set link_style = 'bg-yellow-200 text-yellow-800 hover:bg-yellow-800 hover:text-yellow-200' %}
+{% set link_icon = 'fas fa-pen' %}
+{% endif %}
+{% if link_text is same as('Delete') %}
+{% set link_style = 'bg-red-200 text-red-800 hover:bg-red-800 hover:text-red-200' %}
+{% set link_icon = 'fas fa-trash' %}
+{% endif %}
+{% if link_text is same as('Revisions') %}
+{% set link_style = 'bg-blue-200 text-blue-800 hover:bg-blue-800 hover:text-blue-200' %}
+{% set link_icon = 'fas fa-history' %}
+{% endif %}
+
+    <a href="{{ link['#url'] }}" class="{{ link_style }} font-semibold shadow px-5 py-2 transition-colors duration-300 transform dark:text-gray-200">
+   {{ link_text  }} &nbsp;&nbsp; <i class="{{ link_icon }}"></i>
+    </a>
+

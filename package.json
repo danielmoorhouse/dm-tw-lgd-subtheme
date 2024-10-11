@@ -1,0 +1,25 @@
+{
+  "name": "localgov_subtheme",
+  "version": "1.0.0",
+  "description": "NPM scripts for dm_tw_sub.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run lint:css",
+    "lint:css": "stylelint \"**/*.css\" --fix",
+    "build:css": "npx tailwindcss -i ./css/tailwind.css -o ./css/styles.css --watch"
+  },
+  "author": "Mark Conroy",
+  "license": "ISC",
+  "devDependencies": {
+    "stylelint": "^14.0.1",
+    "stylelint-checkstyle-formatter": "^0.1.2",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-order": "^5.0.0"
+  },
+  "keywords": [],
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  }
+}

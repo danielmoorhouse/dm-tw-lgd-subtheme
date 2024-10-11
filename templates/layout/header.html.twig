@@ -1,0 +1,77 @@
+{# Attach libraries #}
+{% if not localgov_base_remove_js %}
+  {{ attach_library('localgov_base/header-js') }}
+{% endif %}
+
+<header class="bg-gray-800 shadow">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <div class="flex-1">
+        {{ page.header }}
+      </div>
+
+      {% if has_primary_menu or has_search or has_secondary_menu %}
+        <div class="flex space-x-4">
+          {% if has_secondary_menu %}
+            <button
+              class="text-gray-700 hover:text-gray-900 focus:outline-none"
+              data-target="secondary-menu"
+              aria-controls="secondary-menu"
+              aria-expanded="false"
+              aria-label="{{ 'Services: expand and jump to services menu'|t }}"
+            >
+              <span class="sr-only">{{ 'Services'|t }}</span>
+              <span class="material-icons">menu</span>
+            </button>
+          {% endif %}
+
+          {% if has_primary_menu or has_search %}
+            <button
+              class="text-gray-700 hover:text-gray-900 focus:outline-none"
+              data-target="primary-menu"
+              aria-controls="primary-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">{{ 'Menu'|t }}</span>
+              <span class="material-icons">menu</span>
+            </button>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if has_primary_menu or has_search %}
+      <nav id="primary-menu" class="lg:block bg-indigo-900">
+        <div class="container mx-auto">
+          {% if has_primary_menu %}
+            <div class="flex space-x-6">
+              {{ page.primary_menu }}
+            </div>
+          {% endif %}
+          {% if has_search %}
+            <div class="ml-auto">
+              {{ page.search }}
+            </div>
+          {% endif %}
+        </div>
+      </nav>
+    {% endif %}
+
+    {% if has_secondary_menu %}
+      <nav id="secondary-menu" class="hidden lg:block bg-gray-100">
+        <div class="container mx-auto px-4 py-2">
+          {{ page.secondary_menu }}
+        </div>
+      </nav>
+    {% endif %}
+  </div>
+
+  {% if has_subsites_menu %}
+    <div id="subsites-menu" class="bg-gray-200">
+      <div class="container mx-auto px-4 py-2">
+        {{ page.subsites_menu }}
+      </div>
+    </div>
+  {% endif %}
+</header>
+
