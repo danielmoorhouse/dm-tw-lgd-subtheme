@@ -110,6 +110,7 @@
     content_type|clean_class,
     'node',
     'node--type-' ~ node.bundle|clean_class,
+    'p-0',
     content_type in restricted_width_content_types ? 'max-w-3xl mx-auto',
     node.isSticky() ? 'bg-yellow-100',
     not node.isPublished() ? 'opacity-50',
@@ -119,7 +120,7 @@
 
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
 
-  <div class="container mx-auto px-4">  {# Tailwind's container and spacing utilities #}
+  <div class="container max-w-full mx-auto">  {# Tailwind's container and spacing utilities #}
     {{ title_prefix }}
 
     {% if label and not page %}
@@ -143,14 +144,14 @@
       <div class="max-w-3xl mx-auto">  {# Restrict width using Tailwind #}
     {% endif %}
 
-    <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content', 'mt-6') }}>
+    <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
       {{ content|without('localgov_subsites_content') }}
     </div>
 
   </div>
 
   {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
-    <div class="container mx-auto px-4 mt-6">
+    <div class="container mx-auto px-4">
       {{ content.localgov_subsites_content }}
     </div>
   {% endif %}

@@ -19,6 +19,13 @@
 #}
 
 {% if not map.is_empty %}
+<div class="border-indigo-300 px-24"></div>
+<div class="border-indigo-400 px-40"></div>
+<div class="border-indigo-500"></div>
+<div class="border-indigo-600"></div>
+<div class="border-indigo-700"></div>
+<div class="border-indigo-800"></div>
+
   {{ attach_library('localgov_base/leaflet') }}
   <div id="{{ map_id }}" style="min-width: 150px; {% if height is not empty %}height: {{ height }}{% endif %}"></div>
 {% endif %}

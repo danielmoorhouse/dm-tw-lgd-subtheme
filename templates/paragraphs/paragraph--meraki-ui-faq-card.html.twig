@@ -1,0 +1,21 @@
+            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                <button id="faq-question-{{ paragraph.id.value }}" onclick="toggleFaq('{{ paragraph.id.value }}')" class="flex items-center justify-between w-full">
+                    <h1 class="font-semibold text-gray-700 dark:text-white">{{ paragraph.field_question.value }}</h1>
+
+                    <span id="faq-minus-{{ paragraph.id.value }}" class="text-gray-400 bg-gray-200 rounded-full hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                        </svg>
+                    </span>
+                    <span id="faq-plus-{{ paragraph.id.value }}" class="text-white bg-blue-500 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                    </span>
+                </button>
+
+                <p id="faq-answer-{{ paragraph.id.value }}" class="hidden mt-6 text-sm text-gray-500 dark:text-gray-300">
+                    {{ paragraph.field_answer.value }}
+                </p>
+            </div>
+

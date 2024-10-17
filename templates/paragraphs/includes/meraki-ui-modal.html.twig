@@ -1,0 +1,11 @@
+          <div class="modal z-20 mx-auto" id="modal-{{ paragraph_id }}" style="display: none;">
+        <div class="modal-content">
+            
+      
+            <span class="close-modal text-red-500" data-modal-id="{{ paragraph_id }}"><i class="fa-solid fa-circle-xmark"></i></span>
+                {% set form = drupal_entity_form('paragraph', paragraph_id, 'edit') %}
+                    <h3>Edit section component</h3>
+                {{ form|raw }}  
+            {# {{ drupal_entity_form('paragraph', paragraph_id, 'edit') }} #}
+        </div>
+    </div>

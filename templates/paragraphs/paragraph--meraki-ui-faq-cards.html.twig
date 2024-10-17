@@ -1,0 +1,30 @@
+<section class="bg-white dark:bg-gray-900">
+    <div class="container px-20 py-12 mx-auto">
+        <h1 class="text-2xl font-normal text-gray-800 lg:text-3xl dark:text-white">{{ paragraph.field_section_title.value }}</h1>
+            {% set faqs = content|without('field_section_title') %}
+            <div class="mt-8 space-y-8 lg:mt-12">
+            {% for faq in faqs %}
+                {{ faq }}
+            {% endfor %}
+        </div>
+    </div>
+            <script>
+                function toggleFaq(id) {
+                     
+                    const answer = document.getElementById('faq-answer-' + id);
+                    const button = document.getElementById('faq-question-' + id);   
+                    const minus = document.getElementById('faq-minus-' + id);
+                    const plus = document.getElementById('faq-plus-' + id);
+
+                    if (answer.classList.contains('hidden')) {
+                        answer.classList.remove('hidden');
+                        minus.classList.remove('hidden');
+                        plus.classList.add('hidden');
+                    } else {
+                        answer.classList.add('hidden');
+                        plus.classList.remove('hidden');
+                        minus.classList.add('hidden');
+                    }
+                }
+            </script>
+</section>
