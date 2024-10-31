@@ -11,9 +11,11 @@ global-styling:
     theme:
       css/styles.css: {}
       css/custom.css: {}
+      css/theme_style.css: {}
 
   js:
     js/scripts.js: {}
+    js/ajax.js: {}
 
 menu:
   css:

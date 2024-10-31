@@ -10,6 +10,17 @@
  * @see template_preprocess_form()
  */
 #}
+{# {% if attributes["form_id"] == 'block-content-theme-style-edit-form' %} #}
+{% if "block-theme-style-form" in attributes["class"] %}
+
+<form{{ attributes }} onchange="dm_tw_preview();return false">
+{{ children }}
+</form>
+
+{% else %}
+
 <form{{ attributes }}>
   {{ children }}
 </form>
+{% endif %}
+

@@ -1,7 +1,200 @@
+
+#dm_tw_ms_style .form-actions {
+  display: none;
+}
+
+.field--name-lgms-main-logo {
+  width:70px;
+}
+  .region-microsites-header {
+  background-color: var(--primary-colour);
+  }
+  .hero-with-side-image {
+    background-color: var(--ui-colour);
+    color: var(--dark-colour);
+  }
+  .hero-with-side-image h2 {
+    color: var(--dark-colour);
+  }
+  .hero-with-side-image p { 
+    color: var(--dark-colour);
+  }
+  .hero-with-side-image a {
+    background-color: var(--dark-colour);
+    color: var(--light-colour);
+  }
+  .hero-with-side-image img {
+    width:75%;
+  }
+  #hui-centre-aligned-hero {
+    background-color: var(--light-colour);
+  }
+  #hui-centre-aligned-hero h1 {
+    color: var(--dark-colour);
+  }
+  #hui-centre-aligned-hero h1 strong {
+    color: var(--primary-colour);
+  }
+  #hui-centre-aligned-hero p {
+    color: var(--dark-colour);
+  }
+  #hui-centre-aligned-hero a {
+    color: var(--accent-colour);
+    background-color: var(--primary-colour);
+  }
+  #hui-text-left {
+    background-color: var(--light-colour);
+  }
+  #hui-text-left h2 {
+    color: var(--dark-colour);
+  }
+  #hui-text-left p {
+    color: var(--dark-colour);
+  }
+  #hui-text-left a {
+    color: var(--accent-colour);
+    background-color: var(--primary-colour);
+  }
+
+  .grid-list-component h2,
+  .grid-list-component p {
+    color: var(--dark-colour);
+
+  }
+
+.grid-list-item .modal-content {
+  width: 30%;
+  background-color: #f1ebeb;
+  color: #2b2b2b;
+}
+.modal-content label {
+  background-color: #f1ebeb;
+  color: #2b2b2b;
+}
+  .grid-list-item {
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+    min-height: 20rem;
+  }
+  .grid-list-item h2 {
+    color: var(--dark-colour);
+  }
+  .grid-list-item p {
+    color: var(--dark-colour);
+    min-height: 7rem;
+  }
+  .grid-list-item a {
+    background-color: var(--secondary-colour);
+    color: var(--secondary-contrast);
+  }
+  .grid-list-item a:hover {
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+  }
+  .grid-list-item i {
+    color: var(--dark-colour);
+  }
+  .grid-list-item a i {
+    color: var(--light-colour);
+  }
+  .cta-wrap {
+    background-color: var(--light-colour); 
+  }
+  .cta-wrap h2 { 
+    color: var(--dark-colour);
+    font-size: 2.6rem;
+    line-height: normal;
+  }
+  .cta-wrap span.highlighted { 
+    color: var(--secondary-colour);
+    font-size: 2.8rem;
+  }
+  .cta-wrap p { 
+    color: var(--dark-colour);
+  }
+  .cta-wrap a { 
+    color: var(--light-colour);
+    background-color: var(--dark-colour);
+  }
+  .flex-card-component {
+    background-color: var(--light-colour);
+  }
+  .flex-card-component .field--name-field-section-title {
+    color: var(--dark-colour);
+    font-size: 2.8rem;
+  }
+  .flex-card-component .single-card {
+    background-color: var(--secondary-contrast);
+    color: var(--secondary-colour);
+    
+  }
+  .flex-card-component .single-card h2 {
+    color: var(--dark-colour);
+  }
+  .flex-card-component .single-card p {
+    color: var(--dark-colour);
+  }
+  .flex-card-component .single-card a {
+    background-color: var(--secondary-colour);
+    color: var(--secondary-contrast);
+  }
+  .flex-card-component .single-card a:hover {
+    color: var(--dark-colour);
+    background-color: var(--light-colour);
+  }
+
+  .flex-card-component .single-card i {
+    color: var(--dark-colour);
+  }
+  
+  .flex-card-component .single-card a i {
+    color: var(--light-colour);
+  }
+  /* .faq-cards {
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+  }  */
+  .faq-cards .single-faq {
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+    margin-bottom: 5px;
+  }
+  .faq-cards .single-faq h1 {
+    color: var(--dark-colour);
+  }
+  .faq-cards .single-faq p {
+    color: var(--dark-colour);
+  }
+
+  .faq-cards .single-faq .faq-plus {
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+  }
+  .faq-cards .single-faq .faq-minus {
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+  }
+  #hero-fw-image h1 {
+    color: var(--light-colour);
+}
+#hero-fw-image h1 .highlighted {
+  color: var(--ui-colour);
+
+
+}
+#hero-fw-image a.button {
+  color: var(--primary-contrast);
+  background-color: var(--primary-colour);
+}
+  footer {
+    background-color: var(--primary-colour);
+    color: var(--light-colour);
+  }
 h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
 }
+
 p, div, ul {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -11,9 +204,9 @@ p, div, ul {
     padding-bottom: 1rem;
     font-weight: 400;
 }
-.modal {
+#main-content .modal {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     left: 0;
     width: 100%;
@@ -26,14 +219,15 @@ p, div, ul {
 }
 
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
+  background-color: #f1ebeb;
+  color: #2b2b2b;
     width: 50%;
-    margin-top: 10%;
+    margin-top: 1rem;
     margin-left: 25%;
-    margin-right: 25%;
-    text-align: center;
+
+}
+.modal-content table .paragraph-type-icon {
+  display: inline;
 }
 
 .close-modal {
@@ -46,48 +240,55 @@ p, div, ul {
     cursor: pointer;
 }
 .modal .paragraph-form {
-    width:90%;
+    width:100%;
     margin:auto;
     text-align: left;
 }
 .modal .paragraph-form label {
-    width:100%;
-    font-size: .75rem;
-    margin-bottom: -15px;
+    font-size: 0.8rem;
+    margin-bottom: -12px;
     font-weight: 500;
+    display: inline-block;
+}
+.modal .paragraph-form select {
+  padding: 0.8rem;
+  border-radius: 25px;
+  margin-top: 1rem;
 }
 .modal .paragraph-form input {
     width:100%;
     font-size: 1rem;
-    padding: 0.5rem;
-
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 0.8rem;
+    border-radius: 25px;
+    border: none;
 }
-
-.modal .paragraph-form textarea {
+table.field-multiple-table {
+  width:100%;
+}
+.modal .paragraphs-actions input[type=submit]:hover {
+  text-decoration: underline;
+}
+.modal .paragraph-form textarea, .modal textarea {
     width:100%;
     font-size: 1rem;
-    height: 70px;
-    padding: 0.5rem;
-
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    height: 5rem;
+    padding: 0.8rem;
+    border-radius: 25px;
+    border: none;
 }
 .modal .paragraph-form .form-submit { 
-    background-color: #4322fc;
+    background-color: #07926f;
     color: white;
     width:100%;
     margin: auto;
 }
-.modal .paragraph-form .form-wrapper {
-  
+.modal .paragraph-form .form-wrapper, .modal .form-wrapper {
     width:100%;
-    background-color: #f9f9f9;
-    margin-bottom: 0.5rem;
-
 }
-.modal .paragraph-form .description {
+.modal .paragraph-form .js-media-library-widget {
+  display: none;
+}
+.modal .paragraph-form .description, .modal .description {
     display:none;
 }
 .modal .paragraph-form .js-media-library-open-button {
@@ -103,6 +304,151 @@ p, div, ul {
 .modal .paragraph-form .paragraphs-icon-button-edit {
     background-color: #fffc60e5;
     color: #2b2b2b;
-    font-weight: 600;
+    padding: 5px;
+    font-weight: 500;
+}
+.modal .paragraph-form .paragraph-type-label {
+  display:inline-flex;
+  width:7em;
+}
+.modal .paragraph-form table .paragraphs-icon-button-collapse {
+  background-color: #2b2b2b;
+  color:#f9f9f9;
+}
+.modal .paragraph-form table em.placeholder {
+  width:100%;
+  margin-bottom: 30px;
+}
+/* .modal .paragraph-form tr.paragraph-type--meraki-ui-tailwind-css-card {
+    width: 100%;
+}
+.modal table {
+    width:100%;
+} */
+ .modal .paragraph-form .paragraphs-dropdown-actions input {
+      background-color: transparent;
+      color:#2b2b2b;
+ }
+.modal .paragraph-form tr .handle {
+width: 25px;
+color:#2b2b2b;
+}
+.modal .paragraph-form tr {
+  border-radius: 25px;
+  background-color: #f9f9f9;
+}
+.modal .paragraph-form img {
+    width:30px;
+    height:30px;
+}
+.modal .paragraph-form table h4.label {
+  border-radius: 25px;
+  padding: 1rem;
+  margin-bottom: -37px;
+}
+.modal .paragraph-form table tr.draggable {
+    border: 1px solid #ccc;
+}
+.modal .paragraph-form .field-add-more-submit {
+    width:35%;
+    background-color: rgb(45, 20, 114);
+    padding:5px;
+}
+.modal .paragraph-form .clearfix {
+    text-align: center;
+}
+footer {
+  background-color: var(--secondary-colour);
+  color: var(--secondary-contrast);
+}
+
+.rhombus-bg {
+background-color: var(--light-colour);
+opacity: 0.7;
+background-image:  linear-gradient(135deg, var(--ui-colour) 25%, transparent 25%), linear-gradient(225deg, var(--ui-colour) 25%, transparent 25%), linear-gradient(45deg, var(--ui-colour) 25%, transparent 25%), linear-gradient(315deg, var(--ui-colour) 25%, var(--light-colour) 25%);
+background-position:  10px 0, 10px 0, 0 0, 0 0;
+background-size: 10px 10px;
+background-repeat: repeat;
+}
+
+.wave-bg {
+  background-image: url('/themes/custom/dm_tw_sub/assets/images/svg/wave-haikei.png');
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+.primary_theme {
+  background-color: var(--primary-colour);
+}
+.primary_background {
+  background-color: var(--primary-colour);
+}
+.primary_theme h2, .primary_theme p, .primary_theme i  {
+  color: var(--primary-contrast);
+}
+.primary_theme a  {
+  color: var(--primary-colour);
+  background-color: var(--primary-contrast);
+}
+.primary_theme i {
+  color: var(--primary-colour);
+}
+
+.flex-card-component .primary_theme {
+  background-color: var(--primary-colour);
+}
+.flex-card-component .primary_theme h2, .flex-card-component .primary_theme p, .flex-card-component .primary_theme i  {
+  color: var(--primary-contrast);
+}
+.flex-card-component .primary_theme a  {
+  color: var(--primary-colour);
+  background-color: var(--primary-contrast);
+}
+.flex-card-component .primary_theme i {
+  color: var(--primary-colour);
+}
+.secondary_theme {
+  background-color: var(--secondary-colour);
+}
+.secondary_theme h2, .secondary_theme p, .secondary_theme i  {
+  color: var(--secondary-contrast);
+}
+.secondary_theme i {
+  color: var(--secondary-contrast);
+}
+.secondary_theme a  {
+  color: var(--secondary-colour);
+  background-color: var(--secondary-contrast);
+}
+.secondary_background {
+  background-color: var(--secondary-colour);
+}
+.accent_background {
+  background-color: var(--accent-colour);
+}
+.dark_theme {
+  background-color: var(--dark-colour);
+}
+.dark_background {
+  background-color: var(--dark-colour);
+}
+.dark_theme h2, .dark_theme p  {
+  color: var(--light-colour);
+}
+.dark_theme a.more-details-button  {
+  color: var(--light-colour);
+  background-color: var(--ui-colour);
+}
+.dark_theme i  {
+  color: var(--light-colour);
+  background-color: var(--dark-colour);
+  padding:5px;
+}
+.ui_background {
+  background-color: var(--ui-colour);
+}
+section a.edit-button {  
+  background-color: transparent;
+  width: 45px;
+  height:45px;
 }
 

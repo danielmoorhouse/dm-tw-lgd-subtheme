@@ -80,6 +80,7 @@
   Taking this approach also means we can have consistent styling for the
   tabs region on all localgov_drupal websites. Yay!
 #}
+
 {% if has_tabs %}
   {{ page.tabs }}
 {% endif %}
@@ -177,7 +178,7 @@
 {# Begin Footer Regions #}
 {% block footer_sections %}
   {% if footer_regions %}
-    <footer class="bg-indigo-900 text-white py-8">
+    <footer class="py-8">
 
     {# Begin Pre-footer #}
     {% block pre_footer %}

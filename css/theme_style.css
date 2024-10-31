@@ -1,0 +1,41 @@
+
+#dm_tw_ms_style form input {
+    width: 80%;
+}
+#dm_tw_ms_style .js-form-type-vertical-tabs {
+    display:none;
+}
+
+#dm_tw_ms_style .field--type-color-picker {
+    padding:0.5rem;
+    padding-left: 1rem;
+    margin-bottom: 5px;
+    background-color: #eeeeee;
+    border-radius: 20px;
+}
+#dm_tw_ms_style label {
+    display: block !important;
+    width:90%;
+}
+#dm_tw_ms_style .colour-picker {
+    width: 90%;
+    height: 2em;
+
+    border: none !important;
+   
+} 
+#dm_tw_ms_style label[for=edit-field-group-reference--2] {
+    display:none!important;
+}
+#dm_tw_ms_style #edit-field-group-reference--2 {
+    width:100%;
+    padding:0.7rem;
+    font-size:0.9rem;
+    font-weight: bold;
+}
+.ml-20-rem {
+    margin-left: 20rem;
+}
+.paragraphs-add-dialog-row input {
+    background-size: 8%!important;
+}

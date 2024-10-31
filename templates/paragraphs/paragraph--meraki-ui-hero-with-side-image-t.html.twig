@@ -1,0 +1,20 @@
+    <div class="hero-with-side-image lg:flex">
+        <div class="flex items-center justify-center w-full px-6 py-8 lg:h-[32rem] lg:w-1/2">
+            <div class="max-w-xl">
+                <h2 class="text-3xl font-normal {{ paragraph.field_text_colour.value }} dark:text-white lg:text-5xl">{{ paragraph.field_banner_heading.value }}</h2>
+
+                <p class="mt-4 text-sm {{ paragraph.field_text_colour.value }} dark:text-gray-400 lg:text-base">{{ paragraph.field_banner_text.value }}</p>
+
+                <div class="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
+                    <a href="{{ paragraph.field_call_to_action.url }}" class="{{ paragraph.field_button_style.value }} inline-block px-5 py-2 text-sm font-medium tracking-wider text-center transition-colors duration-300 transform rounded-md hover:bg-gray-700">
+                    {{ paragraph.field_call_to_action.title }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-64 lg:w-1/2 lg:h-auto">
+            <div class="w-full h-full bg-cover" style="background-image: url({{ paragraph.field_banner_image|file_url }})">
+                <div class="w-full h-full bg-black opacity-35"></div>
+            </div>
+        </div>
+    </div>

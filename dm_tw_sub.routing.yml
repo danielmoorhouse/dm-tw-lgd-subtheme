@@ -1,0 +1,6 @@
+dm_tw_sub.callajax:
+  path: 'callajax'
+  defaults:
+    _controller: '\Drupal\dm_tw_sub\AjaxMethods::update_colour_value'
+  requirements:
+    _permission: 'access content'

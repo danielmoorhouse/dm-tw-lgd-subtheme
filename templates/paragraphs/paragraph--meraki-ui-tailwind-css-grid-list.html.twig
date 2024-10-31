@@ -1,37 +1,69 @@
-<section id="component-container-{{ paragraph.id.value }}" class="bg-gray-100 dark:bg-gray-900 py-10">
-    <div class="container px-20 py-5 mx-auto">
-        <a class="edit-button absolute right-32" data-component-id="{{ paragraph.id.value }}"><i class="fa-solid fa-pencil"></i></a>
+<section id="component-container-{{ paragraph.id.value }}" class="grid-list-component {{ paragraph.field_section_background.value }} py-16">
+    <div class="container px-8 py-5 mx-auto">
 
-        <h2 class="text-2xl font-normal text-gray-800 capitalize lg:text-4xl dark:text-white">{{ paragraph.field_section_title.value }}</h2>
-            <p class="py-4">{{ paragraph.field_section_intro_text.value }}</p>
+  <a class="edit-button absolute right-32 text-gray-700 bg-white p-2 z-auto" title="Edit section content" data-component-id="{{ paragraph.id.value }}"><img src="/themes/custom/dm_tw_sub/assets/ui_icons/pen.png" alt=""></a>
+
+        <h2 class="text-2xl font-normal text-gray-800 lg:text-4xl dark:text-white">{{ paragraph.field_section_title.value }}</h2>
+            <p class="py-6 text-lg">{{ paragraph.field_section_intro_text.value }}</p>
         </div>
          <div class="container mx-auto">
 
 
         <div class="lg:flex lg:items-center">
             
-        {% set items = content|without('field_section_title', 'field_section_intro_text') %}
-
+        {% set items = content|without('field_section_title', 'field_section_intro_text', 'field_grid_list_image') %}
+        {% if items %}
+        
         {% for item in items  %}
 
             {{ item }}
 
         {% endfor %}
+{% endif %}
+    {% if paragraph.field_image_overlay_opacity %}
+{% set opacity = paragraph.field_image_overlay_opacity.value %}
+{% if opacity == "opacity-30" %}
+    {% set image_overlay_opacity = '30' %}
+{% elseif opacity == "opacity-40" %}
+    {% set image_overlay_opacity = '40' %}
+{% elseif opacity == "opacity-50" %}
+    {% set image_overlay_opacity = '50' %}
+{% elseif opacity == "opacity-60" %}
+    {% set image_overlay_opacity = '60' %}
+{% elseif opacity == "opacity-70" %}
+    {% set image_overlay_opacity = '70' %}
+{% elseif opacity == "opacity-80" %}
+    {% set image_overlay_opacity = '80' %}
+{% else %}
+   {% set image_overlay_opacity = '0' %}
+{% endif %}
 
-
+            
+    {% endif %}
+    
            
 
-            <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-                <img class="w-[28rem] h-[28rem] flex-shrink-0 object-cover xl:w-[34rem] xl:h-[34rem]" src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+            <div class="hidden relative lg:flex lg:w-1/2 lg:justify-center shadow-lg">
+                <div class="absolute inset-0 bg-gray-900/{{ image_overlay_opacity }}"></div>
+
+                <img class="flex-shrink-0 w-full" src="{{ paragraph.field_grid_list_image|file_url }}" alt="">
             </div>
         </div>
     </div>
-        <div class="container px-10 py-5 mx-auto">
-      {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
-        'paragraph_id': paragraph.id.value
-        } 
-      %}
- 
-
-    </div>
+    {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
+        'paragraph_id': paragraph.id.value,
+        'bundle': 'Grid List Component'
+    } %} 
+          {# <div class="modal z-20 mx-auto" id="modal-{{ paragraph.id.value }}" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-head w-100 px-10">
+            <span class="text-xl p-3 bg-purple-900 text-zinc-50">Section Editor</span> <br><br>
+            <span class="text-xl p-3">{{ bundle }}</span>
+                <span class="cursor-pointer close-modal text-red-500 float-right" data-modal-id="{{ paragraph.id.value }}"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>  
+              <span></span>
+                {% set edit_form = drupal_entity_form('paragraph', paragraph.id.value) %}
+                {{ edit_form|without('field_card_body_text') }}
+        </div>
+    </div> #}
 </section>

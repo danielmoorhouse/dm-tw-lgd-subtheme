@@ -1,18 +1,35 @@
+                {% if paragraph.field_item_colour_override %}
+                {% set colour_override = paragraph.field_item_colour_override.value %}
+                {% endif %}
 
+            
+            <div class="single-card space-y-3 w-full border-2 shadow-lg rounded-xl {{ colour_override }}">
 
+            {% if paragraph.field_card_image %}
 
-            <div class="p-8 space-y-3 w-full border-2 bg-white dark:border-blue-300 shadow-lg rounded-xl">
-                <span class="inline-block text-blue-700 dark:text-indigo-400 text-4xl">
-                   <i class="{{ paragraph.field_icon.value }}"></i>
-                </span>
+            <div class="min-h-64 max-h-72 h-auto relative overflow-hidden">
+            <div class="absolute inset-0 bg-gray-900/35">    
+                </div>
+            <img src="{{ paragraph.field_card_image|file_url }}" class="w-full" alt="">
 
-                <h2 class="text-gray-700 capitalize dark:text-white text-2xl lg:text-3xl font-normal">{{ paragraph.field_card_title.value }}</h2>
+            </div>
+            {% endif %}
+            <div class="p-8">
 
-                <p class="text-gray-600 dark:text-gray-300">
-                    {{ paragraph.field_card_body_text.value }}
+                <h2 class="text-3xl px-2 font-normal">{{ paragraph.field_card_title.value }}</h2>
+
+                <p class="py-4 mx-3 min-h-32">
+                    {{ paragraph.field_card_body_text.value }} 
                 </p>
 
-                <a href="{{ paragraph.field_card_button['#url'].value }}" class="inline-flex p-1 px-2 text-purple-700 bg-slate-100 capitalize transition-colors duration-300 transform rounded-full rtl:-scale-x-100 dark:bg-indigo-500 dark:text-white hover:underline hover:text-indigo-600 dark:hover:text-indigo-500">
-                        <i class="fas fa-arrow-circle-right text-xl"></i>
+                <a href="{{ paragraph.field_card_button.url }}" class="{{ paragraph.field_button_style.value }} inline-flex rounded-xl text-md font-medium p-2 mx-3 capitalize transition-colors duration-300 transform rtl:-scale-x-100 dark:bg-indigo-500 dark:text-white hover:underline hover:text-indigo-600 dark:hover:text-indigo-500">
+                       {{ paragraph.field_card_button.title }} &nbsp;<i class="fa-solid fa-arrow-right-long "></i>
                 </a>
+                </div>
+      {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
+        'paragraph_id': paragraph.id.value,
+        'bundle': paragraph.field_section_title.value
+        } 
+      %}
             </div>
+

@@ -1,0 +1,49 @@
+
+<?php
+//UI config theme settings for dm_tw_sub theme
+
+function dm_tw_sub_form_system_theme_settings_alter(&$form, &$form_state) {
+    $form['theme_settings']['primary_color'] = [
+      '#type' => 'color',
+      '#title' => t('Primary Colour'),
+      '#default_value' => theme_get_setting('primary_color'),
+    ];
+  
+    $form['theme_settings']['secondary_color'] = [
+      '#type' => 'color',
+      '#title' => t('Secondary Colour'),
+      '#default_value' => theme_get_setting('secondary_color'),
+    ];
+  
+    $form['theme_settings']['accent_color'] = [
+      '#type' => 'color',
+      '#title' => t('Accent Colour'),
+      '#default_value' => theme_get_setting('accent_color'),
+    ];
+    $form['theme_settings']['information_color'] = [
+        '#type' => 'color',
+        '#title' => t('Information Colour'),
+        '#default_value' => theme_get_setting('information_color'),
+      ];
+    
+      $form['theme_settings']['warning_color'] = [
+        '#type' => 'color',
+        '#title' => t('Warning Colour'),
+        '#default_value' => theme_get_setting('warning_color'),
+      ];
+    
+      $form['theme_settings']['success_color'] = [
+        '#type' => 'color',
+        '#title' => t('Success Colour'),
+        '#default_value' => theme_get_setting('success_color'),
+      ];
+    
+      $form['theme_settings']['danger_color'] = [
+        '#type' => 'color',
+        '#title' => t('Danger Colour'),
+        '#default_value' => theme_get_setting('danger_color'),
+      ];
+
+      return $form;
+  }
+  

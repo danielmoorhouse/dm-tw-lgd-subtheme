@@ -1,11 +1,14 @@
           <div class="modal z-20 mx-auto" id="modal-{{ paragraph_id }}" style="display: none;">
-        <div class="modal-content">
-            
-      
-            <span class="close-modal text-red-500" data-modal-id="{{ paragraph_id }}"><i class="fa-solid fa-circle-xmark"></i></span>
-                {% set form = drupal_entity_form('paragraph', paragraph_id, 'edit') %}
-                    <h3>Edit section component</h3>
-                {{ form|raw }}  
-            {# {{ drupal_entity_form('paragraph', paragraph_id, 'edit') }} #}
+        <div class="modal-content rounded-3xl px-16 py-8">
+            <div class="modal-head w-100">
+            <span class="cursor-pointer close-modal text-red-800 float-right" data-modal-id="{{ paragraph_id }}"><i class="fa-solid fa-circle-xmark"></i></span>
+            <span class="text-4xl py-3 text-purple-900 rounded-xl font-semibold">Section Editor <img class="inline" width="40" height="40" src="/themes/custom/dm_tw_sub/assets/ui_icons/pen.png" style="margin-top:-7px;" alt=""></span> <br><br>
+            <span class="text-2xl font-semibold py-3">{{ bundle }}</span>
+                
+            </div>  
+
+                {% set edit_form = drupal_entity_form('paragraph', paragraph_id) %}
+                {{ edit_form }}
+
         </div>
     </div>

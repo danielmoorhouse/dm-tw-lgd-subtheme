@@ -1,13 +1,19 @@
-<section id="component-container-{{ paragraph.id.value }}" class="bg-purple-100 dark:bg-gray-900 py-10">
+<section id="component-container-{{ paragraph.id.value }}" class="flex-card-component py-16 {{ paragraph.field_section_background.value }}">
 <div class="component-content">
-<div class="container flex px-8 mx-auto">
-    <h2 class="text-2xl text-gray-700 capitalize lg:text-4xl inline-block">{{ paragraph.title.value }}
-    </h2>
-    <a class="edit-button absolute right-32" data-component-id="{{ paragraph.id.value }}"><i class="fa-solid fa-pencil"></i></a>
-</div>
-    <div class="container px-8 py-10 mx-auto">
 
-    {% set cards = content|without('title') %}
+ 
+<div class="container px-8 mx-auto">
+
+     <a class="edit-button absolute right-32 p-2 z-auto" title="Edit section content" data-component-id="{{ paragraph.id.value }}"><img src="/themes/custom/dm_tw_sub/assets/ui_icons/pen.png" alt=""></a>
+        <h2 class="w-full card-row-title text-2xl capitalize lg:text-4xl">{{ paragraph.field_section_title.value }}</h2>
+    <div class="py-8 text-lg">
+      {{ paragraph.field_section_intro_text.value }}
+      </div>
+</div>
+
+    <div class="container py-8 mx-auto">
+
+    {% set cards = content|without('field_section_title', 'field_section_intro_text') %}
 
      {% for item in cards %}
 
@@ -16,12 +22,12 @@
      {% endfor %}
 
     </div>
-    <div class="container px-10 py-5 mx-auto">
+
       {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
-        'paragraph_id': paragraph.id.value
+        'paragraph_id': paragraph.id.value,
+        'bundle': 'Card Row Component'
         } 
       %}
- 
-</div>
+
     </div>
 </section>

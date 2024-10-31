@@ -1,6 +1,7 @@
-<section class="bg-white dark:bg-gray-900">
+<section id="component-container-{{ paragraph.id.value }}" class="faq-cards {{ paragraph.field_section_background.value }}">
     <div class="container px-20 py-12 mx-auto">
-        <h1 class="text-2xl font-normal text-gray-800 lg:text-3xl dark:text-white">{{ paragraph.field_section_title.value }}</h1>
+     <a class="edit-button absolute right-32 p-2 z-auto" title="Edit section content" data-component-id="{{ paragraph.id.value }}"><img src="/themes/custom/dm_tw_sub/assets/ui_icons/pen.png" alt=""></a>
+        <h1 class="text-2xl font-normal lg:text-3xl">{{ paragraph.field_section_title.value }}</h1>
             {% set faqs = content|without('field_section_title') %}
             <div class="mt-8 space-y-8 lg:mt-12">
             {% for faq in faqs %}
@@ -8,23 +9,13 @@
             {% endfor %}
         </div>
     </div>
-            <script>
-                function toggleFaq(id) {
-                     
-                    const answer = document.getElementById('faq-answer-' + id);
-                    const button = document.getElementById('faq-question-' + id);   
-                    const minus = document.getElementById('faq-minus-' + id);
-                    const plus = document.getElementById('faq-plus-' + id);
+        <div class="container px-10 py-5 mx-auto">
+      {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
+        'paragraph_id': paragraph.id.value,
+        'bundle': 'Frequently Asked Questions'
+        } 
+      %}
+ 
 
-                    if (answer.classList.contains('hidden')) {
-                        answer.classList.remove('hidden');
-                        minus.classList.remove('hidden');
-                        plus.classList.add('hidden');
-                    } else {
-                        answer.classList.add('hidden');
-                        plus.classList.remove('hidden');
-                        minus.classList.add('hidden');
-                    }
-                }
-            </script>
+    </div>
 </section>

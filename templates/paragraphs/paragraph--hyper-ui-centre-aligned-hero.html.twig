@@ -1,0 +1,25 @@
+
+
+<section id="hui-centre-aligned-hero" class="shadow-lg">
+ <a class="edit-button absolute right-32 text-purple-600" data-component-id="{{ paragraph.id.value }}"><i class="fa-solid fa-pencil"></i></a>
+  <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-96 lg:items-center">
+    <div class="mx-auto max-w-xl text-center">
+      <h1 class="text-4xl font-normal sm:text-5xl">
+       {{ paragraph.field_banner_heading.value }}
+        <strong class="font-bold sm:block"> {{ paragraph.field_section_heading_bright.value }} </strong>
+      </h1>
+
+      <p class="mt-4 sm:text-xl/relaxed">
+        {{ paragraph.field_banner_text.value }}
+      </p>
+        {% if paragraph.field_call_to_action %}
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a class="block w-full rounded px-12 py-3 text-sm font-medium shadow focus:outline-none focus:ring sm:w-auto" href="{{ paragraph.field_call_to_action.url }}" >
+          {{ paragraph.field_call_to_action.title }}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</section>

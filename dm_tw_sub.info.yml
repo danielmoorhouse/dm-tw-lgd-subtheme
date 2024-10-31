@@ -8,7 +8,7 @@ libraries:
   - dm_tw_sub/global-styling
   - dm_tw_sub/alpine-js
 
-  
+
     # Add libraries that you want to load on every page of your site to the list
   # of those extending localgov_microsites_base/global
   # localgov_microsites_base/variables:

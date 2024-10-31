@@ -11,6 +11,8 @@
 #}
 
 {% block extra_head_items %}
+
+
   <link rel="mask-icon" href="/{{ base_path ~ directory }}/assets/images/favicons/safari-pinned-tab.svg" color="#ffffff">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
@@ -18,4 +20,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    {% set theme_style = drupal_view('contextual_style_application') %}
+      
+    <style id="theme-style">
+        {{ theme_style|render|striptags|raw|trim }}
+    </style>
+
 {% endblock %}
