@@ -1,9 +1,10 @@
 
 function dm_tw_preview() {
-
+    const block = document.getElementById('style-block-id');
+    const blockID = block.getAttribute("data-block-id");
     let colourValues = document.querySelectorAll('.colour-picker');
    
-    //alert(colourValues.forEach);
+    //alert(blockID);
     let primary = "--primary-colour: " + colourValues[0].value +";";
     let primaryContrast = "--primary-contrast: " + colourValues[1].value +";";
     let secondary = "--secondary-colour: " + colourValues[2].value +";";
@@ -19,7 +20,7 @@ function dm_tw_preview() {
 //     saveTheme.removeAttribute('disabled', '');
 // //alert(primary + ', ' + secondary);
     var data = {
-
+        'block_id': blockID,
         'field_primary_colour': colourValues[0].value,
         'field_primary_contrast': colourValues[1].value,
         'field_secondary_colour': colourValues[2].value,
@@ -33,8 +34,6 @@ function dm_tw_preview() {
     Drupal.customAjaxPost(data);
 
 };
-
-
 
 (function ($, Drupal) {
     Drupal.behaviors.customAjaxPost = {

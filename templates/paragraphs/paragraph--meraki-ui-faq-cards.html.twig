@@ -1,7 +1,7 @@
 <section id="component-container-{{ paragraph.id.value }}" class="faq-cards {{ paragraph.field_section_background.value }}">
-    <div class="container px-20 py-12 mx-auto">
+    <div class="container px-12 py-12 mx-auto">
      <a class="edit-button absolute right-32 p-2 z-auto" title="Edit section content" data-component-id="{{ paragraph.id.value }}"><img src="/themes/custom/dm_tw_sub/assets/ui_icons/pen.png" alt=""></a>
-        <h1 class="text-2xl font-normal lg:text-3xl">{{ paragraph.field_section_title.value }}</h1>
+        <h2 class="w-full card-row-title text-2xl capitalize lg:text-4xl">{{ paragraph.field_section_title.value }}</h2>
             {% set faqs = content|without('field_section_title') %}
             <div class="mt-8 space-y-8 lg:mt-12">
             {% for faq in faqs %}
@@ -9,13 +9,13 @@
             {% endfor %}
         </div>
     </div>
-        <div class="container px-10 py-5 mx-auto">
+    
+    <div class="container px-10 py-5 mx-auto">
       {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
         'paragraph_id': paragraph.id.value,
         'bundle': 'Frequently Asked Questions'
         } 
       %}
- 
-
     </div>
+    
 </section>

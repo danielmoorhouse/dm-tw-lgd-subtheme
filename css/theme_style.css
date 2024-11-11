@@ -39,3 +39,7 @@
 .paragraphs-add-dialog-row input {
     background-size: 8%!important;
 }
+.microsite-header__logo a img {
+    width: 12em;
+    max-width: max-content;
+}

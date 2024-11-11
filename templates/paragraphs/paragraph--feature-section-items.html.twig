@@ -1,0 +1,51 @@
+    
+    
+  <div>
+      <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full accent-colour-bg">
+            <i class="{{ paragraph.field_icon.value }} text-3xl lg:text-5xl ui-colour"></i>
+      </div>
+      <h6 class="mb-2 font-semibold text-xl leading-5">{{ paragraph.field_card_title.value }}</h6>
+      <p class="mb-3 text-sm text-gray-900">
+      {{ paragraph.field_card_body_text.value }}
+      </p>
+      <ul class="mb-4 -ml-1 space-y-2">
+        <li class="flex items-start">
+        {% if paragraph.field_list_item_1 is not empty %}
+        
+          <span class="mr-1">
+            <svg class="w-5 h-5 mt-px ui-colour" stroke="currentColor" viewBox="0 0 52 52">
+              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+            </svg>
+          </span>
+
+          {{ paragraph.field_list_item_1.value }}
+          {% endif %}
+        </li>
+        <li class="flex items-start">
+          {% if paragraph.field_list_item_2 is not empty %}
+          <span class="mr-1">
+            <svg class="w-5 h-5 mt-px ui-colour" stroke="currentColor" viewBox="0 0 52 52">
+              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+            </svg>
+          </span>
+          {{ paragraph.field_list_item_2.value }}
+          {% endif %}
+        </li>
+        <li class="flex items-start">
+         {% if paragraph.field_list_item_3 is not empty %}
+          <span class="mr-1">
+            <svg class="w-5 h-5 mt-px ui-colour" stroke="currentColor" viewBox="0 0 52 52">
+              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+            </svg>
+          </span>
+          {{ paragraph.field_list_item_3.value }}
+          {% endif %}
+        </li>
+      </ul>
+      {% if paragraph.field_card_button is not empty %}
+      
+      <a href="{{ paragraph.field_card_button.url }}" aria-label="" class="item-link rounded-md inline-flex items-center font-semibold transition-colors duration-200 p-2 hover:text-deep-purple-800">
+      {{ paragraph.field_card_button.title }} &nbsp;&nbsp;<i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+      {% endif %}
+ </div>

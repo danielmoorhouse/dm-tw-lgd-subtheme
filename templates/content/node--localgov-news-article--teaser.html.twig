@@ -1,0 +1,27 @@
+{# 
+  The only reason we need this file is because it's defined in the
+  news module, so we need this to override the one that comes with
+  that module.
+#}
+
+    
+                <img class="object-cover object-center w-90 h-64 lg:h-80" src="{{ node.field_media_image|file_url }}" alt="">
+          
+                <div class="flex-col py-5 px-6 w-52 bg-slate-100 mr-6">
+                   <span class="text-sm text-gray-600 dark:text-gray-300">
+                      {{ content|without('field_media_image', 'localgov_event_image','body') }}
+                   </span>
+                    <h1 class="mt-4 py-3 text-xl font-semibold text-gray-800 dark:text-white min-h-20">
+                      {{ title_prefix }}
+                          {% if label and not page %}
+                        
+                              {{ label }}
+                  
+                          {% endif %}
+                      {{ title_suffix }}
+                    </h1>
+                      <a href="{{ url }}" class="inline-block text-blue-700 underline hover:text-blue-400">Read article</a>
+                </div>
+      
+       
+

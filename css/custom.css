@@ -2,29 +2,71 @@
 #dm_tw_ms_style .form-actions {
   display: none;
 }
-
+.ui-colour {
+  color: var(--ui-colour);
+}
+.primary-contrast-bg {
+  background-color: var(--primary-contrast);
+}
+.text_primary_contrast {
+  color: var(--primary-contrast)
+}
+.light-colour-bg {
+  background-color: var(--light-colour);
+}
+.accent_colour_bg {
+  background-color: var(--accent-colour);
+}
+.text-secondary-colour {
+  color: var(--secondary-colour);
+}
+.text-secondary-contrast {
+  color: var(--secondary-contrast);
+}
+.text_light {
+  color: var(--light-colour);
+}
+.text_dark {
+  color: var(--dark-colour);
+}
+.primary-btn {
+  background-color: var(--primary-colour);
+  color: var(--primary-contrast);
+  padding: 1rem;
+}
+.secondary-btn {
+  background-color: var(--secondary-colour);
+  color: var(--secondary-contrast);
+  padding: 1rem;
+}
+a.section-link {
+  border: 2px solid var(--secondary-colour);
+  padding: 1rem;
+}
+a.item-link {
+  background-color: var(--primary-contrast);
+  color: var(--primary-colour);
+}
 .field--name-lgms-main-logo {
   width:70px;
 }
   .region-microsites-header {
   background-color: var(--primary-colour);
   }
-  .hero-with-side-image {
-    background-color: var(--ui-colour);
-    color: var(--dark-colour);
-  }
-  .hero-with-side-image h2 {
-    color: var(--dark-colour);
-  }
-  .hero-with-side-image p { 
-    color: var(--dark-colour);
-  }
+.primary-ui-light-gradient {
+  background: var(--primary-colour);
+background: linear-gradient(90deg, var(--primary-colour) 0%, var(--secondary-colour) 46%, var(--light-colour) 100%);
+}
+
   .hero-with-side-image a {
     background-color: var(--dark-colour);
     color: var(--light-colour);
   }
-  .hero-with-side-image img {
-    width:75%;
+  .clip-14 {
+    clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%);
+  } 
+  .clip-14-right {
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
   }
   #hui-centre-aligned-hero {
     background-color: var(--light-colour);
@@ -113,8 +155,8 @@
     color: var(--dark-colour);
   }
   .cta-wrap a { 
-    color: var(--light-colour);
-    background-color: var(--dark-colour);
+    color: var(--secondary-contrast);
+    background-color: var(--secondary-colour);
   }
   .flex-card-component {
     background-color: var(--light-colour);
@@ -174,17 +216,39 @@
     background-color: var(--light-colour);
     color: var(--dark-colour);
   }
+
   #hero-fw-image h1 {
     color: var(--light-colour);
 }
-#hero-fw-image h1 .highlighted {
-  color: var(--ui-colour);
-
-
+#hero-fw-image .hero-text p {
+  color: var(--light-colour);
+  font-size: larger;
+}
+#hero-fw-image ul {
+  color: var(--light-colour);
+  font-size: larger;
+}
+#hero-fw-image .highlighted {
+  color: var(--secondary-colour);
+  background-color: var(--secondary-contrast);
+  display: inline-block;
 }
 #hero-fw-image a.button {
   color: var(--primary-contrast);
   background-color: var(--primary-colour);
+}
+.right-image-grid {
+  filter: grayscale();
+}
+.text_primary {
+  color: var(--primary-colour);
+}
+
+.text_secondary {
+  color: var(--secondary-colour);
+}
+.bg-secondary-contrast {
+  background-color: var(--secondary-contrast);
 }
   footer {
     background-color: var(--primary-colour);
@@ -204,6 +268,7 @@ p, div, ul {
     padding-bottom: 1rem;
     font-weight: 400;
 }
+
 #main-content .modal {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.7);
@@ -261,6 +326,7 @@ p, div, ul {
     padding: 0.8rem;
     border-radius: 25px;
     border: none;
+    margin-bottom: 0.8rem;
 }
 table.field-multiple-table {
   width:100%;
@@ -275,6 +341,13 @@ table.field-multiple-table {
     padding: 0.8rem;
     border-radius: 25px;
     border: none;
+    margin-bottom: 0.8rem;
+}
+.modal .paragraph-form .ck-content p {
+  color:#2b2b2b;
+}
+.modal .paragraph-form .ck-content ul {
+  color:#2b2b2b;
 }
 .modal .paragraph-form .form-submit { 
     background-color: #07926f;
@@ -311,6 +384,20 @@ table.field-multiple-table {
   display:inline-flex;
   width:7em;
 }
+.modal .paragraph-form .field--widget-link-default {
+  background-color: #e4dfdf;
+  padding: 1.5rem;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 25px;
+
+}
+.modal .paragraph-form .field--widget-link-default label {
+  background-color: #e4dfdf;
+}
+.modal .paragraph-form .field--widget-link-default .fieldset-legend {
+  font-weight:600;
+}
 .modal .paragraph-form table .paragraphs-icon-button-collapse {
   background-color: #2b2b2b;
   color:#f9f9f9;
@@ -336,6 +423,7 @@ color:#2b2b2b;
 .modal .paragraph-form tr {
   border-radius: 25px;
   background-color: #f9f9f9;
+  padding-right: 1rem;
 }
 .modal .paragraph-form img {
     width:30px;
@@ -345,6 +433,7 @@ color:#2b2b2b;
   border-radius: 25px;
   padding: 1rem;
   margin-bottom: -37px;
+  background-color: #f9f9f9;
 }
 .modal .paragraph-form table tr.draggable {
     border: 1px solid #ccc;
@@ -361,7 +450,28 @@ footer {
   background-color: var(--secondary-colour);
   color: var(--secondary-contrast);
 }
-
+#newsroom-sidebar input {
+ width: 100%;
+ padding: 8px;
+ border-radius: 25px;
+ margin-bottom: 4px;;
+}
+.single-card img {
+  width:100%;
+}
+#newsroom-sidebar #edit-submit-localgov-news-search {
+  width:25%;
+  border-radius: 25px;
+  padding: 0.5rem;
+  color: var(--secondary-contrast);
+  background-color: var(--secondary-colour);
+}
+h2.sidebar-h2 {
+  color: var(--primary-colour);
+}
+h2.sidebar-h2 span {
+  color: var(--secondary-colour);
+}
 .rhombus-bg {
 background-color: var(--light-colour);
 opacity: 0.7;
@@ -375,6 +485,12 @@ background-repeat: repeat;
   background-image: url('/themes/custom/dm_tw_sub/assets/images/svg/wave-haikei.png');
   background-repeat: no-repeat;
   background-size:100%;
+}
+.scatter_circles {
+  background-image: url('/themes/custom/dm_tw_sub/assets/images/svg/circle-scatter-haikei.png');
+  background-repeat: repeat;
+  
+
 }
 .primary_theme {
   background-color: var(--primary-colour);
@@ -407,6 +523,9 @@ background-repeat: repeat;
   color: var(--primary-colour);
 }
 .secondary_theme {
+  background-color: var(--secondary-colour);
+}
+.secondary_bg {
   background-color: var(--secondary-colour);
 }
 .secondary_theme h2, .secondary_theme p, .secondary_theme i  {
@@ -451,4 +570,26 @@ section a.edit-button {
   width: 45px;
   height:45px;
 }
-
+.newsroom__sidebar input#edit-search-api-fulltext {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 4px;
+  width:100%;
+  margin-bottom: 5px;
+}
+.newsroom__sidebar #edit-submit-localgov-news-search {
+  background-color: var(--primary-colour);
+  color: var(--primary-contrast);
+  padding: 3px;
+  border-radius: 25px;
+  width:100%;
+  margin-bottom: 10px;
+}
+.newsroom__sidebar h3, .newsroom__sidebar label[for=edit-search-api-fulltext] {
+  font-weight:700;
+  margin-top: 5px;
+}
+.green_circles {
+  background-image: url('/themes/custom/dm_tw_sub/assets/images/svg/circle-scatter-green.png');
+  background-size: contain;
+}

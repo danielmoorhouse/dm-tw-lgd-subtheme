@@ -23,8 +23,13 @@
         <span class="sr-only">Open microsite colour palette menu</span>
     </button> #}
     <!-- Dropdown menu -->
-    <div id="dm_tw_ms_style" class="absolute hidden left-0 z-20 p-3 origin-top-left bg-slate-50 shadow-xl w-80">
-     {% set theme_style_form = drupal_entity_form('block_content', 3, 'edit') %}
+    <div id="dm_tw_ms_style" class="absolute hidden left-0 z-50 p-3 origin-top-left bg-slate-50 shadow-xl w-80">
+    {% set groupIDAr = drupal_view('dm_group_id') %}
+    {% set groupID = groupIDAr|render|striptags|trim|lower %}
+     {% set blockIDAr = drupal_view('contextual_style_application_block_id', 'block_1', groupID) %} 
+     {% set blockID = blockIDAr|render|striptags|trim|lower %}
+   <div id="style-block-id" data-block-id="{{ blockID }}">{{ blockID }}</div>
+      {% set theme_style_form = drupal_entity_form('block_content', blockID, 'edit') %}
      <h2 class="text-xl text-blue-800 rounded-lg mb-2 p-3 inline-block">Microsite Colour Palette &nbsp;<i class="fa-solid fa-palette"></i></h2>
       <div class="hidden font-normal rounded-md text-sm p-1 bg-green-200 text-green-950" id="palette_message_success"></div>
       <div class="hidden font-normal rounded-md text-sm p-1 bg-red-200 text-red-950" id="palette_message_error"></div>

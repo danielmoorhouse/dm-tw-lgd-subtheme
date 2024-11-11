@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ *   Wrap list of featured news teasers.
+ */
+#}
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% set featured_news_items %}
+    <div class="lg:flex w-full">
+    {% for item in items %}
+ 
+        {{ item.content }}
+      
+    {% endfor %}
+   </div>
+{% endset %}
+       
+   {{ featured_news_items }}
+

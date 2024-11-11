@@ -1,20 +1,33 @@
+    <section class="{{ paragraph.field_element_background.value }}">
+         <a class="edit-button absolute right-32 p-2 z-50" title="Edit section content" data-component-id="{{ paragraph.id.value }}"><img src="/themes/custom/dm_tw_sub/assets/ui_icons/pen.png" alt=""></a>
+
     <div class="hero-with-side-image lg:flex">
-        <div class="flex items-center justify-center w-full px-6 py-8 lg:h-[32rem] lg:w-1/2">
-            <div class="max-w-xl">
-                <h2 class="text-3xl font-normal {{ paragraph.field_text_colour.value }} dark:text-white lg:text-5xl">{{ paragraph.field_banner_heading.value }}</h2>
+        <div class="flex items-center w-full justify-center px-6 py-8 lg:h-[32rem] lg:w-1/4">
+            <div class="max-w-2xl absolute z-50 px-8 shadow-xl py-8 bg-secondary-contrast" style="left:10rem;">
+                <h2 class="text-3xl font-semibold text_secondary dark:text-white lg:text-5xl">{{ paragraph.field_banner_heading.value }}</h2>
 
-                <p class="mt-4 text-sm {{ paragraph.field_text_colour.value }} dark:text-gray-400 lg:text-base">{{ paragraph.field_banner_text.value }}</p>
-
+                <p class="mt-4 text-lg text_dark lg:text-base">{{ paragraph.field_banner_text.value }}</p>
+                {% if paragraph.field_call_to_action is not empty %}                
                 <div class="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
                     <a href="{{ paragraph.field_call_to_action.url }}" class="{{ paragraph.field_button_style.value }} inline-block px-5 py-2 text-sm font-medium tracking-wider text-center transition-colors duration-300 transform rounded-md hover:bg-gray-700">
                     {{ paragraph.field_call_to_action.title }}</a>
                 </div>
+                {% endif %}
             </div>
         </div>
 
-        <div class="w-full h-64 lg:w-1/2 lg:h-auto">
-            <div class="w-full h-full bg-cover" style="background-image: url({{ paragraph.field_banner_image|file_url }})">
-                <div class="w-full h-full bg-black opacity-35"></div>
+        <div class="w-full h-64 lg:w-3/4 lg:h-auto">
+            <div class="w-full h-full bg-cover clip-14 relative align-bottom" style="background-image: url({{ paragraph.field_banner_image|file_url }})">
+            <span class="text_primary primary-contrast-bg text-sm px-4 rounded-xl absolute z-50" style="bottom:25px;left:35px;"><i class="fa-solid fa-circle-info"></i> &nbsp;{{ paragraph.field_banner_image_caption.value }}</span>
+                <div class="w-full h-full secondary_background opacity-15">
+                
+                </div>
             </div>
         </div>
     </div>
+          {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
+        'paragraph_id': paragraph.id.value,
+        'bundle': 'Hero with Right Image'
+        } 
+      %}
+    </section>

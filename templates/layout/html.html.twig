@@ -20,8 +20,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    {% set theme_style = drupal_view('contextual_style_application') %}
-      
+    {% set groupIDAr = drupal_view('dm_group_id') %}
+    {% set groupID = groupIDAr|render|striptags|trim|lower %}
+    {% set theme_style = drupal_view('contextual_style_application', 'block_1', groupID) %}
     <style id="theme-style">
         {{ theme_style|render|striptags|raw|trim }}
     </style>

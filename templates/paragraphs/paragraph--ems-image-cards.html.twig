@@ -1,0 +1,23 @@
+<section class="py-16 {{ paragraph.field_section_background.value }}" id="image-card-row-{{ paragraph.id.value }}">
+    <div class="container px-12 py-5 mx-auto">
+
+  <a class="edit-button absolute right-32 text-gray-700 bg-white p-2 z-auto" title="Edit section content" data-component-id="{{ paragraph.id.value }}"><img src="/themes/custom/dm_tw_sub/assets/ui_icons/pen.png" alt=""></a>
+        <div class="text-center">
+        <h2 class="text-2xl font-semibold text_dark lg:text-4xl dark:text-white">{{ paragraph.field_section_title.value }}</h2>
+            <p class="py-6 text-lg">{{ paragraph.field_section_intro_text.value }}</p>
+            </div>
+    </div>
+    <div class="container px-12 mx-auto">
+    {% set items = content|without('field_section_title', 'field_section_intro_text') %}
+    <div class="flex">
+    {% for item in items %}
+        {{ item }}
+    {% endfor %}
+    </div>
+    </div>
+          {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
+        'paragraph_id': paragraph.id.value,
+        'bundle': 'Image Cards'
+        } 
+      %}
+</section>

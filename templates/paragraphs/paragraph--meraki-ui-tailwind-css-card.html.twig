@@ -3,7 +3,7 @@
                 {% endif %}
 
             
-            <div class="single-card space-y-3 w-full border-2 shadow-lg rounded-xl {{ colour_override }}">
+            <div class="single-card space-y-3 w-full border-2 shadow-lg rounded-xl overflow-hidden {{ colour_override }}">
 
             {% if paragraph.field_card_image %}
 
@@ -14,7 +14,7 @@
 
             </div>
             {% endif %}
-            <div class="p-8">
+            <div class="px-8 py-4">
 
                 <h2 class="text-3xl px-2 font-normal">{{ paragraph.field_card_title.value }}</h2>
 

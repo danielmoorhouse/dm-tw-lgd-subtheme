@@ -1,0 +1,40 @@
+
+<section class="{{ paragraph.field_section_background.value }}">
+  <a class="edit-button absolute right-32 text-gray-700 bg-white p-2 z-auto" title="Edit section content" data-component-id="{{ paragraph.id.value }}"><img src="/themes/custom/dm_tw_sub/assets/ui_icons/pen.png" alt=""></a>
+
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="flex flex-col lg:flex-row">
+    <div class="max-w-xl pr-16 mx-auto mb-10">
+      <h2 class="mb-6 text-4xl font-semibold text_dark leading-normal">
+        {{ paragraph.field_section_title.value }}
+      </h2>
+      <p class="mb-6 text_dark text-lg ">
+       {{ paragraph.field_section_intro_text.value }}
+      </p>
+      <div>
+        <a href="{{ paragraph.field_call_to_action.url }}" aria-label="" class="section-link rounded-md shadow-md inline-flex items-center font-semibold transition-colors duration-200 text_secondary hover:text-deep-purple-800">
+          {{ paragraph.field_call_to_action.title }}
+          <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+            <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="grid gap-5 row-gap-5 sm:grid-cols-2">
+     {% set feature_items = content|without('field_section_title','field_section_intro_text','field_call_to_action') %} 
+     
+    {% for item in feature_items %}
+
+        {{ item }}
+   
+    {% endfor %}
+      
+     
+    </div>
+  </div>
+</div>
+      {% include "@dm_tw_sub/paragraphs/includes/meraki-ui-modal.html.twig" with {
+        'paragraph_id': paragraph.id.value
+        } 
+      %}
+</section>
